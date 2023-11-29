@@ -4,6 +4,7 @@ import com.example.playground4rdb.util.DateTimeGenerator
 import com.example.playground4rdb.util.DescriptionGenerator
 import com.example.playground4rdb.util.NameGenerator
 import com.example.playground4rdb.util.PositionGenerator
+import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -16,6 +17,7 @@ data class Player(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int,
+    @Column(name = "names")
     val name: String,
     val description: String,
     val position: String,

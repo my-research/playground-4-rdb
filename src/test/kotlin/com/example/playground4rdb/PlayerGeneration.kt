@@ -18,9 +18,8 @@ class PlayerGeneration @Autowired constructor(
 ) {
 
     fun generateAndSavePlayers() {
-        val players = PlayerGenerator.gen(10_000)
+        val players = PlayerGenerator.gen(1_000)
         repository.saveAll(players)
-        println("Thread ID: ${Thread.currentThread().id} is running.")
     }
 
     @Test

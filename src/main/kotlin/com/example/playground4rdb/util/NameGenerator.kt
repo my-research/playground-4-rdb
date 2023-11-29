@@ -8,7 +8,7 @@ object NameGenerator {
         return "$randomLastName$randomFirstName"
     }
 
-    private val lastNames = arrayOf("김", "강", "홍", "제", "어", "채", "장", "이", "박", "최", "정", "강", "조", "윤", "주", "임", "허")
+    private val lastNames = arrayOf("김", "강", "홍", "제", "어", "채", "장", "이", "박", "최", "정", "강", "조", "윤", "주", "임", "허", "성", "민")
     private val firstNames = arrayOf(
         "원익",
         "혜진",
@@ -41,6 +41,10 @@ object NameGenerator {
         "찬들",
         "이나",
         "주선",
-        "가람"
+        "가람",
+        "하준",
+        "찬서",
+        "민수",
+        "민영"
     )
 }

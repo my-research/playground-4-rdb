@@ -15,7 +15,7 @@ CREATE TABLE simple_todos
 CREATE TABLE players
 (
     id          INT AUTO_INCREMENT PRIMARY KEY,
-    names        VARCHAR(15),
+    names       VARCHAR(15),
     description VARCHAR(20),
     position    VARCHAR(10),
     unique_tag  VARCHAR(50),
@@ -26,7 +26,8 @@ CREATE TABLE players
 CREATE TABLE teams
 (
     id         INT AUTO_INCREMENT PRIMARY KEY,
-    name       VARCHAR(50),
+    names      VARCHAR(50),
+    league     VARCHAR(50),
     address    VARCHAR(20),
     fans       INT,
     created_at TIMESTAMP,
