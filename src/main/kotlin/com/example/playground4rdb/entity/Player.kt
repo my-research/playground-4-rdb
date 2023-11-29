@@ -1,7 +1,9 @@
 package com.example.playground4rdb.entity
 
 import com.example.playground4rdb.util.DateTimeGenerator
+import com.example.playground4rdb.util.DescriptionGenerator
 import com.example.playground4rdb.util.NameGenerator
+import com.example.playground4rdb.util.PositionGenerator
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -9,7 +11,7 @@ import jakarta.persistence.Id
 import java.time.LocalDateTime
 import java.util.UUID
 
-@Entity
+@Entity(name = "players")
 data class Player(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +28,18 @@ object PlayerGenerator {
     fun gen(n: Int): List<Player> {
         val ret = mutableListOf<Player>()
         repeat(n) {
-            ret.add(Player(0, NameGenerator.gen(), "som", "공격수", UUID.randomUUID().toString(), DateTimeGenerator.gen(), DateTimeGenerator.gen()))
+            val desc = DescriptionGenerator.gen()
+            ret.add(
+                Player(
+                    0,
+                    NameGenerator.gen(),
+                    desc,
+                    desc.split(" ")[2],
+                    UUID.randomUUID().toString(),
+                    DateTimeGenerator.gen(),
+                    DateTimeGenerator.gen()
+                )
+            )
         }
 
         return ret

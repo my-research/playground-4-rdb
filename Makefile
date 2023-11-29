@@ -24,7 +24,7 @@ endif
 
 start-mysql: ## Start DB Docker Container
 ifneq ($(RUNNING_DB_CONTAINER),$(LOCAL_DB_CONTAINER))
-	@docker run --name $(LOCAL_DB_CONTAINER) -d \
+	@docker run --rm --name $(LOCAL_DB_CONTAINER) -d \
 	-v ${PWD}/docker/schema:/docker-entrypoint-initdb.d \
 	-v ${PWD}/docker/mysql-character-config.cnf:/etc/mysql/conf.d/my.cnf \
 	-p $(LOCAL_MYSQL_PORT):3306 \
